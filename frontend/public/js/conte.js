@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let indexChapitreActuel = 0;
     let dataConte = null;
     let estDeveloppeur = false;
+    let generationEnCours = false;
 
     if (!idConte) {
         afficherErreur('ID de conte invalide');
@@ -150,7 +151,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             const maintenant = new Date();
             const diffHeures = (maintenant - dateCreationDernierChapitre) / (1000 * 60 * 60);
 
-            if (estDeveloppeur || diffHeures >= 24) {
+            if (generationEnCours) {
+                afficherMessageGenerationEnCours();
+            } else if (estDeveloppeur || diffHeures >= 24) {
                 ajouterBoutonGenererSuivant();
             } else {
                 ajouterMessageAttente(24 - Math.floor(diffHeures));
@@ -195,12 +198,28 @@ document.addEventListener('DOMContentLoaded', async () => {
             boutonGenerer.innerHTML = '<i class="bi bi-hourglass-split text-lg"></i> Génération en cours...';
             boutonGenerer.classList.add('opacity-70', 'cursor-not-allowed');
 
+            generationEnCours = true;
+
             await genererEtAjouterChapitre();
+
+            generationEnCours = false;
 
             boutonGenerer.disabled = false;
             boutonGenerer.innerHTML = '<i class="bi bi-magic text-lg group-hover:rotate-12 transition-transform"></i> Générer la suite';
             boutonGenerer.classList.remove('opacity-70', 'cursor-not-allowed');
         });
+    }
+
+    function afficherMessageGenerationEnCours() {
+        const messageExistant = document.querySelector('.message-generation-en-cours');
+        if (messageExistant) return;
+
+        const message = document.createElement('div');
+        message.className = 'message-generation-en-cours px-4 py-2.5 bg-gray-800 rounded-lg text-blue-400 font-medium flex items-center gap-2 text-s absolute right-0 top-8';
+        message.innerHTML = '<i class="bi bi-hourglass-split text-lg animate-pulse"></i> Génération en cours...';
+
+        const header = document.querySelector('#conte-titre').parentNode;
+        header.appendChild(message);
     }
 
     function ajouterMessageAttente(heuresRestantes) {
@@ -222,6 +241,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const token = localStorage.getItem('token');
             if (!token) {
                 alert('Vous devez être connecté pour pouvoir générer la suite');
+                generationEnCours = false;
                 return;
             }
 
@@ -243,6 +263,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (!generation.success) {
                 alert(generation.message || 'Erreur lors de la génération du chapitre');
+                generationEnCours = false;
                 return;
             }
 
@@ -262,6 +283,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (!sauvegarde.success) {
                 alert(sauvegarde.message);
+                generationEnCours = false;
                 return;
             }
 
@@ -269,6 +291,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         } catch (erreur) {
             alert('Une erreur est survenue lors de la génération du chapitre');
+            generationEnCours = false;
         }
     }
 });

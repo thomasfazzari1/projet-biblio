@@ -42,5 +42,9 @@ app.get('/conte/:id', (req, res) => {
     res.render('index', { view: 'conte', conteId: req.params.id });
 });
 
+app.get('/auteurs', (req, res) => {
+    res.render('index', { view: 'auteurs' });
+});
+
 const PORT = 3000;
 app.listen(PORT)

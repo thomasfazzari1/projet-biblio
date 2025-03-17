@@ -18,15 +18,23 @@
         <%- include('partials/espace-dev') %>
     <% } else if (locals.view === 'conte') { %>
         <%- include('partials/conte') %>
+    <% } else if (locals.view === 'auteurs') { %>
+        <%- include('partials/auteurs') %>
     <% } else { %>
         <%- include('partials/accueil') %>
     <% } %>
 </main>
 
-<footer class="fixed bottom-0 left-0 w-full bg-gray-800 text-sm text-gray-400 opacity-75">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-center">
-        <a href="https://idmc.univ-lorraine.fr/" target="_blank" class="hover:text-gray-300 opacity-75 transition-opacity duration-200">
-            2025 - Institut des Sciences du Digital, Management, Cognition - Nancy 54000
+<footer class="fixed bottom-0 left-0 w-full bg-gray-800/90 backdrop-blur-sm border-t border-gray-700/50 text-sm text-gray-400 z-10">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="w-24"></div>
+        <div class="text-center">
+            <a href="https://idmc.univ-lorraine.fr/" target="_blank" class="hover:text-white transition-colors duration-200">
+                2025 - Institut des Sciences du Digital, Management, Cognition - Nancy 54000
+            </a>
+        </div>
+        <a href="https://idmc.univ-lorraine.fr/" target="_blank" class="transition-all duration-300 hover:opacity-100">
+            <img src="/img/idmc.png" alt="IDMC Logo" class="h-10 drop-shadow-md">
         </a>
     </div>
 </footer>

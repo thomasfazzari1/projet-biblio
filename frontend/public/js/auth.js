@@ -29,10 +29,17 @@ export function adapterNav(infoUtilisateur) {
             </button>
             ` : ''}
             
+            <a href="/auteurs" 
+               class="text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-all flex items-center gap-2 text-l">
+                Auteurs
+            </a>
+        </div>
+        
+        <div class="flex items-center gap-6">
             ${infoUtilisateur.est_developpeur ? `
-        <a href="/espace-dev" class="text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-all flex items-center gap-2 text-l">
-            Espace Développeur
-        </a>
+            <a href="/espace-dev" class="text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-all flex items-center gap-2 text-l">
+                Espace Développeur
+            </a>
             ` : ''}
             
             <button 
@@ -114,6 +121,10 @@ async function deconnexion() {
         const conteneurMenu = document.getElementById('menuContainer');
         if (conteneurMenu) {
             conteneurMenu.innerHTML = `
+                <a href="/auteurs" 
+                   class="text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-all flex items-center gap-2 text-l">
+                    Auteurs
+                </a>
                 <button 
                     id="authButton" 
                     class="text-gray-300 hover:text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2"
@@ -213,6 +224,10 @@ window.addEventListener('tokenUpdated', () => {
         const conteneurMenu = document.getElementById('menuContainer');
         if (conteneurMenu) {
             conteneurMenu.innerHTML = `
+                <a href="/auteurs" 
+                   class="text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-all flex items-center gap-2 text-l">     
+                    Auteurs
+                </a>
                 <button 
                     id="authButton" 
                     class="text-gray-300 hover:text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2"
