@@ -1,0 +1,85 @@
+.mea-culpa-regular {
+    font-family: "Merriweather", serif;
+}
+
+.inter {
+    font-family: "Merriweather", serif;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 #0f172a;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #111827;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+    border: 1px solid #2a3851;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3b82f6;
+    border: 1px solid #60a5fa;
+    border-radius: 10px;
+    min-height: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #60a5fa;
+}
+
+#contes::-webkit-scrollbar,
+#filters::-webkit-scrollbar,
+#dbContent::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-auto::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+#contes::-webkit-scrollbar-track,
+#filters::-webkit-scrollbar-track,
+#dbContent::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track,
+.overflow-auto::-webkit-scrollbar-track {
+    background: #0f172a;
+    border: 1px solid #2a3851;
+    border-radius: 10px;
+}
+
+#contes::-webkit-scrollbar-thumb,
+#filters::-webkit-scrollbar-thumb,
+#dbContent::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb,
+.overflow-auto::-webkit-scrollbar-thumb {
+    background-color: #3b82f6;
+    border: 1px solid #60a5fa;
+    border-radius: 10px;
+}

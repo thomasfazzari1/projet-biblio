@@ -1,0 +1,23 @@
+{
+  "name": "service-texte",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@mistralai/mistralai": "^1.4.0",
+    "bad-words": "^3.0.4",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.21.2",
+    "french-badwords-list": "^1.0.7",
+    "leo-profanity": "^1.7.0",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full inter">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Projet Bibliographique 2024/2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-900 text-white">
+<%- include('partials/nav') %>
+
+<main id="main-content" class="flex-1 flex items-center justify-center pt-20 pb-16">
+    <% if (locals.view === 'espace-dev') { %>
+        <%- include('partials/espace-dev') %>
+    <% } else if (locals.view === 'conte') { %>
+        <%- include('partials/conte') %>
+    <% } else { %>
+        <%- include('partials/accueil') %>
+    <% } %>
+</main>
+
+<footer class="fixed bottom-0 left-0 w-full bg-gray-800 text-sm text-gray-400 opacity-75">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-center">
+        <a href="https://idmc.univ-lorraine.fr/" target="_blank" class="hover:text-gray-300 opacity-75 transition-opacity duration-200">
+            2025 - Institut des Sciences du Digital, Management, Cognition - Nancy 54000
+        </a>
+    </div>
+</footer>
+
+<%- include('partials/auth-modal') %>
+<%- include('partials/credit-modal') %>
+
+</body>
+</html>

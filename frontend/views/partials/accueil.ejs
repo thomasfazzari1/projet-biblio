@@ -1,0 +1,28 @@
+<div class="flex gap-6 justify-center w-full max-w-7xl mx-auto">
+    <!-- Contes -->
+    <div class="w-[850px] rounded-xl p-5 h-[calc(100vh-12rem)] shadow-xl border border-blue-500/20 flex flex-col">
+        <div class="flex justify-between h-10 mb-2">
+            <h2 class="inter text-2xl font-semibold text-blue-500">Contes</h2>
+            <button
+                    id="generateButton"
+                    class="hidden group px-4 py-2.5 rounded-lg transition-all text-gray-300 hover:text-blue-400 font-medium flex items-center gap-2 text-s"
+            >
+                <i class="bi bi-magic text-lg group-hover:rotate-12 transition-transform"></i>
+                Générer
+            </button>
+        </div>
+        <div id="contes" class="space-y-5 overflow-y-auto flex-1 pr-2">
+        </div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="w-[350px] rounded-xl p-5 h-[calc(100vh-12rem)] shadow-xl border border-blue-500/20 flex flex-col">
+        <div class="flex justify-between h-10 mb-2 mt-1">
+            <h2 class="inter text-2xl font-semibold text-blue-500">Filtres</h2>
+        </div>
+        <div id="filters" class="space-y-5 overflow-y-auto flex-1 pr-2">
+        </div>
+    </div>
+</div>
+
+<script defer type="module" src="/js/accueil.js"></script>

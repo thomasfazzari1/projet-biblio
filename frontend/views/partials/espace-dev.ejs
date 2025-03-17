@@ -1,0 +1,24 @@
+<div class="w-full max-w-7xl mx-auto rounded-2xl p-6 shadow-2xl border border-blue-500/30 bg-gray-900/80 backdrop-blur-md">
+    <h2 class="inter text-3xl font-bold mb-6 text-blue-500">
+        Base de données
+    </h2>
+
+    <div class="flex gap-4 mb-8">
+        <select
+                id="dbSelect"
+                class="bg-gray-800 text-white px-4 py-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 w-full shadow-lg transition-all"
+        >
+            <option value="">Choisissez une base de données</option>
+        </select>
+    </div>
+
+    <h2 class="inter text-2xl font-semibold mb-4 text-blue-500">
+        Tables
+    </h2>
+
+    <div id="dbContent" class="overflow-y-auto max-h-[400px] space-y-4 p-2 rounded-lg bg-gray-800/40 border border-gray-700 shadow-inner">
+        <p class="text-gray-400 text-center">Aucune table sélectionnée</p>
+    </div>
+</div>
+
+<script defer src="/js/espace-dev.js"></script>

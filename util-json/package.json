@@ -1,0 +1,11 @@
+{
+  "name": "util-json",
+  "version": "1.0.0",
+  "description": "Utilitaires de traitement JSON partagés",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,69 @@
+<div id="authModal" class="hidden fixed inset-0 z-50">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="bg-gray-900 w-full max-w-md rounded-2xl shadow-xl p-8 border border-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="mea-culpa-regular text-2xl font-bold text-blue-500">Connexion</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-400 transition-colors">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <form id="authForm" class="space-y-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-300">Email</label>
+                    <div class="relative">
+                        <i class="bi bi-envelope-fill absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                        <input
+                                type="email"
+                                name="email"
+                                required
+                                class="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                                placeholder="votreemail@example.com"
+                        >
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-300">Mot de passe</label>
+                    <div class="relative">
+                        <i class="bi bi-lock-fill absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                        <input
+                                type="password"
+                                name="mdp"
+                                required
+                                class="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                                placeholder="••••••••"
+                        >
+                    </div>
+                </div>
+
+                <div class="pt-4 space-y-4">
+                    <button
+                            type="submit"
+                            id="submitButton"
+                            class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-all"
+                    >
+                        <span id="submitText">Se connecter</span>
+                    </button>
+
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-800"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-gray-900 text-gray-500">ou</span>
+                        </div>
+                    </div>
+
+                    <button
+                            type="button"
+                            id="switchMode"
+                            class="w-full bg-gray-800 text-gray-300 py-3 px-4 rounded-lg font-medium border border-gray-700 hover:bg-gray-700 transition-all"
+                    >
+                        Créer un compte
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
