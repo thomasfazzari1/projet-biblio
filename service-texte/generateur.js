@@ -133,9 +133,6 @@ const Generateur = {
                                 ]
                             }
                         }
-                        
-                        L'objet nouveaux_elements est OPTIONNEL et ne doit être inclus que si de nouveaux personnages ou lieux sont introduits.
-                        
                         Règles importantes:
                         1. Répondre UNIQUEMENT avec le JSON valide et rien d'autre
                         2. Ne pas inclure de texte explicatif avant ou après le JSON
