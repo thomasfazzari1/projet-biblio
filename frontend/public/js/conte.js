@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     let estDeveloppeur = false;
     let generationEnCours = false;
 
+    const paramChap = new URLSearchParams(window.location.search).get('chap');
+    if (paramChap) {
+        indexChapitreActuel = parseInt(paramChap) - 1;
+    } else {
+        const indexSauvegarde = localStorage.getItem(`conte_${idConte}_chapter`);
+        if (indexSauvegarde) {
+            indexChapitreActuel = parseInt(indexSauvegarde);
+        }
+    }
+
     if (!idConte) {
         afficherErreur('ID de conte invalide');
         return;
@@ -32,6 +42,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         dataConte = donnees.conte;
+
+        if (indexChapitreActuel >= dataConte.chapitres.length) {
+            indexChapitreActuel = dataConte.chapitres.length - 1;
+        }
+        if (indexChapitreActuel < 0) {
+            indexChapitreActuel = 0;
+        }
+
+        sauvegarderIndexChapitre(indexChapitreActuel);
+
         afficherEntete(dataConte, indexChapitreActuel);
         afficherChapitre(dataConte, indexChapitreActuel);
         configurerPagination(dataConte);
@@ -159,6 +179,19 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ajouterMessageAttente(24 - Math.floor(diffHeures));
             }
         }
+
+        sauvegarderIndexChapitre(index);
+        mettreAJourUrl(index);
+    }
+
+    function sauvegarderIndexChapitre(index) {
+        localStorage.setItem(`conte_${idConte}_chapter`, index);
+    }
+
+    function mettreAJourUrl(index) {
+        const url = new URL(window.location);
+        url.searchParams.set('chap', index + 1);
+        window.history.replaceState({}, '', url);
     }
 
     function configurerPagination(conte) {
@@ -287,7 +320,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
 
-            window.location.reload();
+            const nouveauChapitreIndex = dataConte.chapitres.length;
+            sauvegarderIndexChapitre(nouveauChapitreIndex);
+
+            window.location.href = `${window.location.pathname}?chap=${nouveauChapitreIndex + 1}`;
 
         } catch (erreur) {
             alert('Une erreur est survenue lors de la génération du chapitre');
