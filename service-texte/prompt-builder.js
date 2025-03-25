@@ -42,12 +42,8 @@ const PromptBuilder = {
     genererPromptChapitreSuivant(conte, dernierChapitre) {
         // On détermine l'étape narrative pour le chapitre
         const numeroProchainChapitre = conte.chapitres ? conte.chapitres.length + 1 : 2;
-
         // On s'assure que nb chap <= 5 (un par étape narrative)
-        if (numeroProchainChapitre > ETAPES_NARRATIVES.length) {
-            return null;
-        }
-
+        if (numeroProchainChapitre > ETAPES_NARRATIVES.length) {return null;}
         const etapeSuggestion = ETAPES_NARRATIVES[numeroProchainChapitre - 1];
 
         let personnagesListe = '';

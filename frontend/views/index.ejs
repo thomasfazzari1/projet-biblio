@@ -13,7 +13,7 @@
 <body class="flex flex-col min-h-screen bg-gray-900 text-white">
 <%- include('partials/nav') %>
 
-<main id="main-content" class="flex-1 flex items-center justify-center pt-20 pb-16">
+<main id="main-content" class="flex-1 flex items-center justify-center" style="padding-top: 5rem; padding-bottom: 5rem;">
     <% if (locals.view === 'espace-dev') { %>
         <%- include('partials/espace-dev') %>
     <% } else if (locals.view === 'conte') { %>
@@ -25,13 +25,20 @@
     <% } %>
 </main>
 
-<footer class="fixed bottom-0 left-0 w-full bg-gray-800/90 backdrop-blur-sm border-t border-gray-700/50 text-sm text-gray-400 z-10">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<footer class="fixed bottom-0 left-0 w-full bg-gray-800/90 backdrop-blur-sm border-t border-gray-700/50 text-sm text-gray-400 z-10" style="height: 4rem;">
+    <div class="container mx-auto h-full px-6 flex items-center justify-between">
         <div class="w-24"></div>
         <div class="text-center">
             <a href="https://idmc.univ-lorraine.fr/" target="_blank" class="hover:text-white transition-colors duration-200">
                 2025 - Institut des Sciences du Digital, Management, Cognition - Nancy 54000
             </a>
+            <div class="mt-1 text-gray-500">
+                Développé par : FAZZARI Thomas
+                <span class="mx-1">-</span>
+                COLOMBANA Ugo
+                <span class="mx-1">-</span>
+                CHARTIER Guillaume
+            </div>
         </div>
         <a href="https://idmc.univ-lorraine.fr/" target="_blank" class="transition-all duration-300 hover:opacity-100">
             <img src="/img/idmc.png" alt="IDMC Logo" class="h-10 drop-shadow-md">
